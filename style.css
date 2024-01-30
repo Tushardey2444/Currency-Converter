@@ -1,0 +1,243 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+    font-family: 'Source Code Pro', monospace;
+    /* color: whitesmoke; */
+    color: black;
+}
+
+.wrapper {
+    position: relative;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.899);
+    /* perspective: 100px;
+    transform-style: preserve-3d; */
+    animation-name: gradient;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+@keyframes gradient {
+    0% {
+        background-image: linear-gradient(to bottom right, rgba(0, 128, 0, 0.518), rgba(128, 0, 128, 0.523), rgba(255, 192, 203, 0.534), rgba(0, 255, 0, 0.512));
+    }
+    25% {
+        background-image: linear-gradient(to bottom right, rgba(128, 0, 128, 0.551), rgba(255, 192, 203, 0.545), rgba(0, 255, 0, 0.512), rgba(0, 255, 255, 0.529));
+    }
+    50% {
+        background-image: linear-gradient(to bottom right, rgba(255, 192, 203, 0.529), rgba(0, 255, 0, 0.518), rgba(0, 255, 255, 0.523), rgba(180, 68, 68, 0.529));
+    }
+    75% {
+        background-image: linear-gradient(to bottom right, rgba(0, 255, 0, 0.523), rgba(0, 255, 255, 0.507), rgba(180, 68, 68, 0.545), rgba(137, 43, 226, 0.556));
+    }
+    100% {
+        background-image: linear-gradient(to bottom right, rgba(0, 255, 255, 0.518), rgba(180, 68, 68, 0.534), rgba(137, 43, 226, 0.534), rgba(205, 134, 63, 0.534));
+    }
+}
+
+.container {
+    position: absolute;
+    background-color: transparent;
+    width: 40%;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation-name: pageLoad;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-direction: normal;
+}
+
+@keyframes pageLoad {
+    0% {
+        left: 0;
+        transform: rotate(0deg);
+    }
+    100% {
+        left: 30%;
+        transform: rotate(360deg);
+    }
+}
+
+.heading {
+    color: whitesmoke;
+    margin-bottom: 30px;
+}
+
+.amount {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.amount h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.amount input {
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid whitesmoke;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.from {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.to {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fromImg {
+    position: absolute;
+    animation-name: Images1;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+@keyframes Images1 {
+    0% {
+        left: 5%;
+        transform: rotate(0deg);
+    }
+    50% {
+        left: 30%;
+        transform: rotate(360deg);
+    }
+    100% {
+        left: 5%;
+        transform: translateX(5%);
+    }
+}
+
+.toImg {
+    position: absolute;
+    animation-name: Images2;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    right: 0;
+}
+
+@keyframes Images2 {
+    0% {
+        right: 5%;
+        transform: rotate(0deg);
+    }
+    50% {
+        right: 30%;
+        transform: rotate(360deg);
+    }
+    100% {
+        right: 5%;
+        transform: translateX(5%);
+    }
+}
+
+.fromSel {
+    max-width: 100px;
+    z-index: 100;
+}
+
+.toSel {
+    max-width: 100px;
+    z-index: 100;
+}
+
+#fromSelect {
+    width: 100%;
+    border-radius: 6px;
+    padding: 3px;
+    background-color: rgba(0, 0, 0, 0.137);
+}
+
+#toSelect {
+    border-radius: 6px;
+    padding: 3px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.144);
+}
+
+option {
+    background-color: rgba(0, 0, 0, 0.844);
+    padding: 3px;
+}
+
+.result {
+    margin-bottom: 30px;
+}
+
+.btnDiv {
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.btnDiv button {
+    width: 60%;
+    height: 50px;
+    padding: 8px 0 8px 0;
+    border-radius: 35px;
+    background-color: rgba(0, 0, 0, 0.41);
+    font-size: 15px;
+    transition: width 0.5s, font-size 0.5s;
+    /* transition-property: width, font-size;
+    transition-duration: 0.5s; */
+    transition-timing-function: ease-in-out;
+}
+
+.btnDiv button:hover {
+    width: 70%;
+    font-size: 18px;
+}
+
+i {
+    animation-name: rotation;
+    animation-timing-function: ease-in-out;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
